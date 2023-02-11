@@ -1,9 +1,7 @@
 import React from 'react';
-import { useTheme } from '@mui/material/styles';
 
 const Login = () => {
-  const theme = useTheme();
-  return <span>Login</span>;
+  return <p className="bg-primary text-xl font-bold underline">Login</p>;
 };
 
 export default Login;

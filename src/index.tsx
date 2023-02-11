@@ -5,23 +5,22 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { store } from '@store/index';
-import theme from '@configs/theme';
 import Main from '@containers/App';
-import { ThemeProvider } from '@mui/material';
 import { Provider } from 'react-redux';
+import { config } from './configs/axiosConfig';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container as HTMLElement);
 
+config();
+
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <BrowserRouter>
-          <Main />
-        </BrowserRouter>
-      </Provider>
-    </ThemeProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Main />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
 );
 

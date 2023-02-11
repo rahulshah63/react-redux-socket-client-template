@@ -44,14 +44,5 @@ export const AuthenticatedRoute: FC<IRouteProps> = ({ component: ChildComponent,
 };
 
 export const UnauthenticatedRoute: FC<IRouteProps> = ({ component: ChildComponent, ...rest }) => {
-  const auth = useAppSelector((state: { auth: AuthState }) => state.auth);
-  const navigate = useNavigate();
-  useEffect(() => {
-    const isAuthenticated = auth.isAuthenticated;
-    if (isAuthenticated) {
-      navigate(routes.DASHBOARD);
-    }
-  }, [auth.isAuthenticated]);
-
   return <ChildComponent />;
 };
