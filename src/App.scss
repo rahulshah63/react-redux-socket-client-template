@@ -1,0 +1,104 @@
+@import './sass/themes';
+
+@each $name, $theme in $themes {
+  .app-#{$name} {
+    width:100dvw;
+    height: 100dvh;
+    color: map-get($theme, primary-fg);
+    background-color: map-get($theme, primary-bg);
+    transition-property: background-color, color;
+    transition-duration: 1s;
+  }
+  .app-logos-#{$name} {
+    overflow: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 20rem;
+
+    .vite-logo-#{$name} {
+      height: 6em;
+      padding: 1.5em;
+      will-change: filter;
+      transition: filter 300ms;
+
+      &:hover {
+        filter: drop-shadow(0 0 2em map-get($theme, logo-drop-shadow));   
+      }
+    }
+
+    .react-logo-#{$name} {
+      height: 6em;
+      padding: 1.5em;
+      will-change: filter;
+      transition: filter 300ms;
+      animation: logo-spin infinite 20s linear;
+
+      &:hover {
+        filter: drop-shadow(0 0 2em map-get($theme, logo-drop-shadow));   
+      }
+    }
+
+    .ts-logo-#{$name} {
+      height: 6em;
+      padding: 1.5em;
+      will-change: filter;
+      transition: filter 300ms;
+
+      &:hover {
+        filter: drop-shadow(0 0 2em map-get($theme, logo-drop-shadow));   
+      }
+    }
+
+    .sass-logo-#{$name} {
+      height: 6em;
+      padding: 1.5em;
+      will-change: filter;
+      transition: filter 300ms;
+
+      &:hover {
+        filter: drop-shadow(0 0 2em map-get($theme, logo-drop-shadow));   
+      }
+    }
+  }
+
+  .app-description-#{$name} {
+    display: flex;
+    flex-flow:  row wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    width: 100vw;
+    height: 10rem;
+  }
+
+  .app-card-#{$name} {
+    font-size: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    button {
+      background:    #073763;
+      background:    linear-gradient(#073763, #6fa8dc);
+      border-radius: 4px;
+      padding:       20px 45px;
+      color:         #ffffff;
+      display:       inline-block;
+      font:          normal bold 21px/1 "Roboto", san-serif;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .app-instructions-#{$name} {
+    font-size: 3rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
